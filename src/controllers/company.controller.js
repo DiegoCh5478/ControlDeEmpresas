@@ -111,8 +111,7 @@ const updateCompany = async (req, res) => {
       if (companyExists) {
         return res.status(400).send({
           ok: false,
-          message: `**El nombre ${companyName} ya fue usado por la empresa: `,
-          companyExists,
+          message: `El nombre ${companyName} ya fue usado una empresa`
         });
       }
     }
