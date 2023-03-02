@@ -8,6 +8,7 @@ const generateJWT = async(id, companyName)=>{
         const token = await jwt.sign(payLoad, secretyKey, {
             expiresIn: '1h'
         });
+        return token;
     } catch (error) {
         throw new Error(error);
     }

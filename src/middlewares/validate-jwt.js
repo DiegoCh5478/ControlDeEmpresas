@@ -3,8 +3,8 @@ const jwt = require('jsonwebtoken');
 const moment = require('moment');
 const Company = require('../models/company.model');
 
-const validateJWT = async(rec= request, res = response, next)=>{
-    const token = req.header('x-tokne');
+const validateJWT = async(req = request, res = response, next)=>{
+    const token = req.header('x-token');
     if(!token){
         res.status(401).send({message: 'No hay un token en la peticion'});
     }
