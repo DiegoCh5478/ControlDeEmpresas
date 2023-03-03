@@ -50,7 +50,7 @@ const readCompanies = async (req, res) => {
   }
 };
 
-// >>>>>>> Ver empresas
+// >>>>>>> Actulizar empresas
 //Una empresa de tipo admnistrador puede editar al igual que una empresa normal
 const updateCompany = async (req, res) => {
   try {
@@ -213,7 +213,7 @@ const companyDefault = async () => {
     if (!companyNameFind) {
       company = await company.save();
       return console.log(
-        `Se creo el usuario por defecto correctaemnte ${company}`
+        `Se creo la empresa por defecto correctaemnte ${company}`
       );
     }
   }

@@ -7,11 +7,10 @@ const Company = Schema({
     companyName: {type: String, require: true},
     password: {type: String, require: true},
     typeOfCompany: {type: String, require: true},
-    branchOffices: [{
-        //Para saber si la sucursal esta funcionamiento
-        state: {type: Boolean, require: true},
-        nameBranchOffices: {type: String, require: true},
-        municipality: {type: String, require: true}
+    branchOffices:[{
+        state: {type:String, require: false},//Para saber si la sucursal esta funcionamiento
+        nameBranch: {type: String, require: false},
+        municipality: {type: String, require: false}
     }]
 });
 
