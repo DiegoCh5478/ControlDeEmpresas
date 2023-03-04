@@ -58,7 +58,8 @@ api.put(
 // >>>> Eliminar empresa
 // Si una empresa de tipo admin quiere eliminar una empresa normal, debe mandar el id con el nombre de parametro idCompany
 api.delete('/delete-company', [
-    validateJWT
+    validateJWT,
+    check('idCompany', 'El campo idCompany es obligatorio.')
 ], deleteCompany)
 
 

@@ -57,7 +57,7 @@ api.put(
 // >>>>> Elimnar sucursal
 api.delete('/delete-branch', [
     validateJWT,
-    check('idBranch', 'El parametro idBranch es necesario para la eliminar una sucursal.'),
+    check('idBranchOffices', 'El parametro idBranchOffices es necesario para la eliminar una sucursal.'),
     validateParams
 ], deleteBranch);
 

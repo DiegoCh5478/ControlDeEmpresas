@@ -95,12 +95,12 @@ const updateBranch = async(req, res)=>{
 
 const deleteBranch = async(req, res)=>{
   const id = req.companyLogin._id;
-  const { idBranch } = req.body;
+  const { idBranchOffices } = req.body;
   try {
     let deleteBranch = await Company.updateOne(
       { _id: id },
       {
-        $pull: { branchOffices: { _id: idBranch } },
+        $pull: { branchOffices: { _id: idBranchOffices } },
       },
       { new: true, multi: false }
     );
@@ -109,7 +109,7 @@ const deleteBranch = async(req, res)=>{
       return res.status(404).send({ message: "La sucursal no existe" });
     }
     const company = await Company.findById({_id: id});
-
+    console.log(company);
     return res.status(200).send({ message: 'Estado de las sucursales', company });
   } catch (err) {
     throw new Error(err);
